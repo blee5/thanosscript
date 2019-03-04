@@ -8,7 +8,7 @@ FILENAME = "thanos.obj"
 
 vertices = []
 
-def draw_line(vs):
+def draw_face(vs):
     print("line")
     print(' '.join(vertices[vs[0] - 1]) + ' ' + ' '.join(vertices[vs[1] - 1]))
     print("line")
@@ -24,7 +24,7 @@ with open(FILENAME, 'r') as obj:
     for line in lines:
         if line.startswith('f '):
             line = [int(v.split('/')[0]) for v in line.strip("f \n").split()]
-            draw_line(line)
+            draw_face(line)
 
 # Edit the rest of the script here
 print('''
